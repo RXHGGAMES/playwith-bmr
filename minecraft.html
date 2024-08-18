@@ -1,42 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MINECRAFT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        /* Basic reset and full viewport height */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: black;
-        }
-        
-        /* Neon green text with glowing effect */
-        p {
-            color: lime; /* Text color */
-            font-size: 3rem; /* Adjust size as needed */
-            font-family: 'Press Start 2P', cursive; /* Use the Minecraft-style font */
-            text-shadow: 
-                0 0 3px lime, /* Inner glow */
-                0 0 5px lime, /* Medium glow */
-                0 0 7px lime, /* Outer glow */
-                0 0 10px lime; /* Strong outer glow */
-
-            text-align: center; /* Center text horizontally */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Green Glow Card</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>SUPERCELL5536</p>
+  <article class="card">
+    <img
+      class="card__background"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjId5_T0HJD9GSgeVYCJXPvuH0QU0jEvzl4ANqhLYEPNOXnjIPBcE8ktsBmhNzuMOF5wYGxtjE1gQu9OkrCsuSmdV158yHdQVsS9E6j0Cf-zPnJRcY0OBGONnRBo88sQ0uMQuHoEmmFxGHfwe-ZXTifYB0BInVBKDxejQEqOWFGbzERuPFz2mfAf0KAacA/s320/51272da5049f2c95171ae1980dcba57b.jpg"
+      alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+      width="1920"
+      height="2193"
+    />
+    <div class="card__content | flow">
+      <div class="card__content--container | flow">
+        <h2 class="card__title">MINECRAFT</h2>
+        <p class="card__description">
+          MY MINECRAFT NAME IS "SUPERCELL5536"
+        </p>
+      </div>
+    </div>
+  </article>
 </body>
 </html>
+<STYLE>@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+:root {
+  /* Colors */
+  --brand-color: hsl(120, 100%, 50%); /* Neon Green */
+  --deep-green: hsl(120, 100%, 30%); /* Deep Green */
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --neon-green: hsl(120, 100%, 100%); /* Neon Green Glow */
+  /* Fonts */
+  --font-title: "Press Start 2P", sans-serif; /* Minecraft-like font */
+  --font-text: "Lato", sans-serif;
+}
+
+/* RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h2,
+p {
+  margin: 0;
+}
+
+/* GLOBAL STYLES */
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: var(--black); /* Set the background to black */
+  padding: 0;
+  margin: 0; /* Ensure no default margin is applied */
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-family: var(--font-title);
+  color: var(--neon-green); /* Neon Green text */
+  line-height: 1.1;
+  text-shadow: 0 0 5px var(--neon-green); /* Neon glow effect */
+}
+
+p {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--neon-green); /* Neon Green text */
+  text-shadow: 0 0 5px var(--neon-green); /* Neon glow effect */
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* CARD COMPONENT */
+
+.card {
+  display: grid;
+  place-items: center;
+  width: 80vw;
+  max-width: 21.875rem;
+  height: 28.125rem;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  background-color: var(--black); /* Set the card background to black */
+  transition: box-shadow 500ms ease-in-out;
+}
+
+.card > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.card__background {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  transition: transform 500ms ease-in;
+}
+
+.card__content {
+  --flow-space: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  height: 55%;
+  padding: 12% 1.25rem 1.875rem;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsl(0, 0%, 0%) 100%
+  );
+}
+
+.card__content--container {
+  --flow-space: 1.25rem;
+}
+
+.card__title {
+  position: relative;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefix for Firefox */
+  color: var(--neon-green); /* Neon Green text */
+  text-shadow: 0 0 5px var(--neon-green); /* Neon glow effect */
+}
+
+.card__title::after {
+  content: "";
+  position: absolute;
+  height: 0.3125rem;
+  width: calc(100% + 1.25rem);
+  bottom: calc((1.25rem - 0.5rem) * -1);
+  left: -1.25rem;
+  background-color: var(--brand-color); /* Neon Green for underline */
+  box-shadow: 0 0 10px var(--brand-color); /* Neon glow effect */
+}
+
+.card__button {
+  padding: 0.75em 1.6em;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefix for Firefox */
+  font-variant: small-caps;
+  font-weight: bold;
+  border-radius: 0.45em;
+  border: none;
+  background-color: var(--brand-color); /* Neon Green background for button */
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  color: var(--neon-green); /* Neon Green text for button */
+  text-shadow: 0 0 5px var(--neon-green); /* Neon glow effect */
+  transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.card__button i {
+  margin-left: 0.5em;
+}
+
+.card__button:hover {
+  color: var(--neon-green); /* Neon Green text on hover */
+  box-shadow: 0 0 10px var(--neon-green); /* Neon Green glow on hover */
+}
+
+.card__button:focus {
+  outline: 2px solid var(--neon-green);
+  outline-offset: -5px;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .card__content {
+    transform: translateY(62%);
+    transition: transform 500ms ease-out;
+    transition-delay: 500ms;
+  }
+
+  .card__title::after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1000ms ease-in, transform 500ms ease-out;
+    transition-delay: 500ms;
+    transform-origin: right;
+  }
+
+  .card__background {
+    transition: transform 500ms ease-in;
+  }
+
+  .card__content--container > :not(.card__title),
+  .card__button {
+    opacity: 0;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--brand-color); /* Neon Green glow */
+    transition: transform 500ms ease-in, box-shadow 500ms ease-in-out;
+  }
+
+  .card:hover .card__content,
+  .card:focus-within .card__content {
+    transform: translateY(0);
+    transition: transform 500ms ease-in;
+  }
+
+  .card:focus-within .card__content {
+    transition-duration: 0ms;
+  }
+
+  .card:hover .card__background,
+  .card:focus-within .card__background {
+    transform: scale(1.3);
+    background-color: var(--deep-green); /* Deep Green background on hover */
+  }
+
+  .card:hover .card__title::after,
+  .card:focus-within .card__title::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    box-shadow: 0 0 10px var(--brand-color); /* Neon Green glow for line */
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition-delay: 500ms;
+  }
+
+  .card:hover .card__content--container > :not(.card__title),
+  .card:hover .card__button,
+  .card:focus-within .card__content--container > :not(.card__title),
+  .card:focus-within .card__button {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    transition-delay: 1000ms;
+  }
+
+  .card:hover .card__button,
+  .card:focus-within .card__button {
+    box-shadow: 0 0 10px var(--brand-color); /* Neon Green glow for button */
+  }
+}
+</STYLE>
+   
 <!DOCTYPE html>
 <html lang="en">
 <head>
